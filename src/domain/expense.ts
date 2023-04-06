@@ -6,5 +6,5 @@ export interface Expense {
   amount: Number;
   currency: Currency
   date: Number; // millisecs timestamp
-  user: string; //should be a proper type
+  userId: Number;
 }

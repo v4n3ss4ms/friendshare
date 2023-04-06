@@ -1,7 +1,10 @@
+import { Injectable } from '@angular/core';
 import { Expense } from '../domain/expense';
 import { ExpensesRepository } from '../domain/expenses-repository';
-import { Currency } from '../domain/currency'; 
-
+import { Currency } from '../domain/currency';
+@Injectable({
+  providedIn: 'root',
+})
 export class ExpensesLocalRepository implements ExpensesRepository {
   data = [
     {
@@ -10,7 +13,7 @@ export class ExpensesLocalRepository implements ExpensesRepository {
       amount: 140,
       currency: Currency.euro,
       date: 1680290914000,
-      user: 'Paco',
+      userId: 1,
     },
     {
       id: 65,
@@ -18,7 +21,7 @@ export class ExpensesLocalRepository implements ExpensesRepository {
       amount: 6,
       currency: Currency.euro,
       date: 1680802792290,
-      user: 'María',
+      userId: 11,
     },
     {
       id: 51,
@@ -26,7 +29,7 @@ export class ExpensesLocalRepository implements ExpensesRepository {
       amount: 53.8,
       currency: Currency.euro,
       date: 1679061634000,
-      user: 'María',
+      userId: 6,
     },
   ];
   findAll(): Expense[] {

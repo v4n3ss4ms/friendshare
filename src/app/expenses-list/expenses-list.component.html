@@ -1,2 +1,5 @@
 <p>Gastos</p>
-<app-expense-item />
+<ul *ngFor="let expense of expenses; index as i;">
+  <app-expense-item [expense]="expense" [users]="users"/>
+</ul>
+
