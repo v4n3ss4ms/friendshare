@@ -13,10 +13,12 @@ export class BalancesListComponent {
   @Input() expenses = [] as Expense[];
   @Input() users = [] as User[];
   usersWithBalance = [] as UserWithBalance[];
+  usersCount = 0 as number;
+  totalGroupExpenses = 0 as number;
 
   ngOnInit(): void {
-    const usersCount: number = this.users.length;
-    const totalGroupExpenses: number = this.getTotalGroupExpenses(
+    this.usersCount = this.users.length;
+    this.totalGroupExpenses = this.getTotalGroupExpenses(
       this.expenses
     );
     this.usersWithBalance = this.users.map((user) => {
@@ -28,13 +30,21 @@ export class BalancesListComponent {
         ...user,
         totalExpenses: totalUserExpenses,
         balance: this.getUserBalance(
-          totalGroupExpenses,
+          this.totalGroupExpenses,
           totalUserExpenses,
-          usersCount
+          this.usersCount
         ),
         currency: Currency.euro, // Hardcoded - Please check ReadMe notes
       };
     });
+
+    console.log('on init');
+    console.log(this.users);
+  }
+
+  ngOnChanges(): void {
+    console.log('on changes');
+    console.log(this.users)
   }
 
   getTotalGroupExpenses(expenses: Expense[]): number {

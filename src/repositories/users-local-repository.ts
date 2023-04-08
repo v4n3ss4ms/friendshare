@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../domain/user';
 import { UsersRepository } from '../domain/users-repository';
-import { Currency } from '../domain/currency';
 @Injectable({
   providedIn: 'root',
 })
@@ -24,7 +23,10 @@ export class UsersLocalRepository implements UsersRepository {
       name: 'Ana',
     },
   ];
-  findAll(): User[] {
+  getAll(): User[] {
     return this.data;
+  }
+  addUser(user: User): void {
+    this.data.push(user);
   }
 }

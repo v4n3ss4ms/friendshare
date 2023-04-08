@@ -40,7 +40,10 @@ export class ExpensesLocalRepository implements ExpensesRepository {
       userId: 6,
     },
   ];
-  findAll(): Expense[] {
+  getAll(): Expense[] {
     return this.data;
+  }
+  addExpense(expense: Expense): void {
+    this.data.push(expense);
   }
 }

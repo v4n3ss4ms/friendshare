@@ -3,6 +3,7 @@ import { ExpensesLocalRepository } from '../../repositories/expenses-local-repos
 import { Expense } from '../../domain/expense';
 import { UsersLocalRepository } from '../../repositories/users-local-repository';
 import { User } from '../../domain/user';
+import { Currency } from '../../domain/currency';
 
 @Component({
   selector: 'app-expenses-group',
@@ -18,7 +19,27 @@ export class ExpensesGroupComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.expensesData = this.expensesLocalRepository.findAll();
-    this.usersData = this.usersLocalRepository.findAll();
+    this.expensesData = this.expensesLocalRepository.getAll();
+    this.usersData = this.usersLocalRepository.getAll();
+  }
+  onAddUser(): void {
+    console.log('onAddUser');
+    this.usersLocalRepository.addUser({
+      id: 259,
+      name: 'Ana222',
+    });
+    console.log(this.usersData);
+  }
+  onAddExpense(): void {
+    console.log('onAddExpense');
+    this.expensesLocalRepository.addExpense({
+      id: 89,
+      name: 'copas',
+      amount: 30,
+      currency: Currency.euro,
+      date: 1680280912000,
+      userId: 11,
+    });
+    console.log(this.expensesData);
   }
 }

@@ -1,5 +1,6 @@
 import { User } from './user';
 
 export interface UsersRepository {
-  findAll(): User[];
+  getAll(): User[];
+  addUser(user: User): void;
 }
