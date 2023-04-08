@@ -41,9 +41,18 @@ export class ExpensesLocalRepository implements ExpensesRepository {
     },
   ];
   getAll(): Expense[] {
-    return this.data;
+    return this.quickSort(this.data);
   }
   addExpense(expense: Expense): void {
-    this.data.push(expense);
+    this.data.unshift(expense);
+  }
+  quickSort([x = [], ...xs]: any): Expense[] {
+    return x.length === 0
+      ? []
+      : [
+          ...this.quickSort(xs.filter((y: Expense) => y.date >= x.date)),
+          x,
+          ...this.quickSort(xs.filter((y: Expense) => y.date < x.date)),
+        ];
   }
 }

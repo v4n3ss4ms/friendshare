@@ -3,7 +3,7 @@
       <h2 class="group-info__name">Nombre del grupo</h2>
       <ul class="group-info__actions">
           <li class="group-info__action">
-              <button type="button" class="group-info__new-user" (click)="onAddUser()">
+              <button type="button" class="group-info__new-user" (click)="onOpenAddUser()">
                   <svg class="icon" width="32" height="32" aria-hidden="true" focusable="false">
                       <use xlink:href="../../assets/imgs/user.svg"></use>
                   </svg>
@@ -11,7 +11,7 @@
               </button>
           </li>
           <li class="group-info__action">
-              <button type="button" class="group-info__new-expense" (click)="onAddExpense()">
+              <button type="button" class="group-info__new-expense" (click)="onOpenAddExpense()">
                   <svg class="icon" width="32" height="32"  aria-hidden="true" focusable="false">
                       <use xlink:href="../../assets/imgs/expense.svg"></use>
                   </svg>
@@ -23,3 +23,4 @@
 <app-expenses-list [expenses]="expensesData" [users]="usersData"/>
 <app-balances-list [expenses]="expensesData" [users]="usersData"/>
 </main>
+<app-new-expense-popup *ngIf="isOpenAddExpensePopup" [users]="usersData" (newExpenseEvent)="addExpense($event)" (closeNewExpenseEvent)="onCloseAddExpense()"/>

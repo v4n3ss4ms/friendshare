@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -9,6 +10,7 @@ import { ExpensesListComponent } from './expenses-list/expenses-list.component';
 import { ExpenseItemComponent } from './expense-item/expense-item.component';
 import { BalancesListComponent } from './balances-list/balances-list.component';
 import { BalanceItemComponent } from './balance-item/balance-item.component';
+import { NewExpensePopupComponent } from './new-expense-popup/new-expense-popup.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +21,12 @@ import { BalanceItemComponent } from './balance-item/balance-item.component';
     ExpensesListComponent,
     ExpenseItemComponent,
     BalancesListComponent,
-    BalanceItemComponent
+    BalanceItemComponent,
+    NewExpensePopupComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

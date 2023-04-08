@@ -12,39 +12,42 @@ import { Currency } from '../../domain/currency';
 })
 
 export class ExpensesGroupComponent implements OnInit {
-  expensesData: Expense[] = [];
-  usersData: User[] = [];
+  expensesData = [] as Expense[];
+  expenses = [] as Expense[];
+  usersData = [] as User[];
+  isOpenAddUserPopup = false as boolean;
+  isOpenAddExpensePopup = false as boolean;
+
   constructor(
     private expensesLocalRepository: ExpensesLocalRepository,
-    private usersLocalRepository: UsersLocalRepository
+    private usersLocalRepository: UsersLocalRepository,
   ) {}
 
   ngOnInit(): void {
     this.expensesData = this.expensesLocalRepository.getAll();
-    this.usersData = this.usersLocalRepository.getAll();
+    this.usersData = this.usersLocalRepository.getAll();    
   }
+
   onOpenAddUser(): void {
 
   }
+
   onOpenAddExpense(): void {
-    
+    this.isOpenAddExpensePopup = true;
   }
+  onCloseAddExpense(): void {
+    this.isOpenAddExpensePopup = false;
+  }
+
   onAddUser(): void {
     console.log('onAddUser');
-    this.usersLocalRepository.addUser({
+/*     this.usersLocalRepository.addUser({
       id: 259,
       name: 'Ana222',
-    });
+    }); */
   }
-  onAddExpense(): void {
-    console.log('onAddExpense');
-    this.expensesLocalRepository.addExpense({
-      id: 89,
-      name: 'copas',
-      amount: 30,
-      currency: Currency.euro,
-      date: 1680280912000,
-      userId: 11,
-    });
+  addExpense(expense: Expense): void {
+    this.isOpenAddExpensePopup = false;
+    this.expensesLocalRepository.addExpense(expense);
   }
 }
