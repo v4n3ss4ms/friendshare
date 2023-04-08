@@ -1,0 +1,11 @@
+.group-info {
+  display: flex;
+  background-color: var(--c-primary);
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.group-info__actions {
+  display: flex;
+  gap: 1rem;
+}

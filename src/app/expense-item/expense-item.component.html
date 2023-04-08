@@ -1,1 +1,10 @@
-<p>{{expense.name}}</p>
+<li class="expense">
+  <div class="expense__info">
+      <p class="expense__name">{{ expense.name }}</p>
+      <p class="expense__date">{{ this.date }}</p>
+      <p class="expense__user">{{ getUserName.execute(expense.userId, users) }}</p> 
+  </div>
+  <div class="expense__amount">
+    <p class="expense__date">{{ expense.amount }}{{ expense.currency }}</p>
+  </div>
+</li>

@@ -1,5 +1,8 @@
-<p>Gastos</p>
-<ul *ngFor="let expense of expenses; index as i;">
-  <app-expense-item [expense]="expense" [users]="users"/>
-</ul>
+<section class="expenses">
+  <h2 class="expenses__title">Gastos</h2>
+
+  <ul class="expenses__list">
+    <app-expense-item *ngFor="let expense of expenses; index as i;" [expense]="expense" [users]="users"/>
+  </ul>
+</section>
 

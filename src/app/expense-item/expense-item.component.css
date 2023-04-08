@@ -1,0 +1,7 @@
+.expense {
+  border: 1px solid var(--c-secondary);
+  border-radius: 0.25rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
