@@ -19,6 +19,10 @@ export class UsersLocalRepository implements UsersRepository {
       id: 11,
       name: 'Manolo',
     },
+    {
+      id: 25,
+      name: 'Ana',
+    },
   ];
   findAll(): User[] {
     return this.data;

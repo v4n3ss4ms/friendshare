@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { UserWithBalance } from '../../domain/userWithBalance';
 
 @Component({
   selector: 'app-balance-item',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./balance-item.component.css']
 })
 export class BalanceItemComponent {
+  @Input() userWithBalance = {} as UserWithBalance;
 
+  ngOnInit(): void {}
 }

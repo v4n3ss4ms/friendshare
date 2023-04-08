@@ -1,2 +1,4 @@
 <p>Balance</p>
-<app-balance-item />
+<ul *ngFor="let userWithBalance of usersWithBalance; index as i;">
+  <app-balance-item [userWithBalance]="userWithBalance"/>
+</ul>

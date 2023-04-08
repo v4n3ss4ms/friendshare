@@ -6,7 +6,7 @@ import { User } from '../domain/user';
 export class GetUserName {
   constructor() {}
 
-  execute(id: Number, users: User[]) {
+  execute(id: number, users: User[]) {
     const user: User | undefined = users.find((user) => user.id === id);
     const name: string = user ? user.name : 'This user no longer exists';
     return name;

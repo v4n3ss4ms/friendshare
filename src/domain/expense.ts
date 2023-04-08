@@ -1,10 +1,10 @@
 import { Currency } from './currency';
 
 export interface Expense {
-  id: Number;
+  id: number;
   name: string;
-  amount: Number;
+  amount: number;
   currency: Currency
-  date: Number; // millisecs timestamp
-  userId: Number;
+  date: number; // millisecs timestamp
+  userId: number;
 }

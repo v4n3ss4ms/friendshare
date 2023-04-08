@@ -24,6 +24,14 @@ export class ExpensesLocalRepository implements ExpensesRepository {
       userId: 11,
     },
     {
+      id: 567,
+      name: 'cine',
+      amount: 57,
+      currency: Currency.euro,
+      date: 1680365052000,
+      userId: 11,
+    },
+    {
       id: 51,
       name: 'aperitivo',
       amount: 53.8,

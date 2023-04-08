@@ -14,7 +14,5 @@ export class ExpenseItemComponent implements OnInit {
 
   constructor(private getUserName: GetUserName) {}
 
-  ngOnInit(): void {
-    console.log(this.getUserName.execute(10, this.users));
-  }
+  ngOnInit(): void {}
 }

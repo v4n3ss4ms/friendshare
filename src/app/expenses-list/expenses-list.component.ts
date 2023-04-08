@@ -10,7 +10,5 @@ import { User } from '../../domain/user';
 export class ExpensesListComponent implements OnInit {
   @Input() expenses = [] as Expense[];
   @Input() users = [] as User[];
-  ngOnInit(): void {
-    console.log(this.expenses);
-  }
+  ngOnInit(): void {}
 }
