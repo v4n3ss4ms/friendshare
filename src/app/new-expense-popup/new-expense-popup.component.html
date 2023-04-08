@@ -1,13 +1,13 @@
 <div class="">
-  
-
   <label for="name">Nombre: </label>
-  <input id="name" type="text" [formControl]="name" required>
+  <input id="name" type="text" [formControl]="name" required />
   <label for="amount">Cantidad: </label>
-  <input id="amount" type="number" [formControl]="amount" required>
+  <input id="amount" type="number" [formControl]="amount" required />
   <label for="user">Usuario</label>
   <select id="user" [formControl]="user" required>
-    <option *ngFor="let user of users" [value]="user.id">{{user.name}}</option>
+    <option *ngFor="let user of users" [value]="user.id">
+      {{ user.name }}
+    </option>
   </select>
   <button type="button" (click)="onSaveExpense()">Añadir</button>
   <button type="button" (click)="onCancel()">Cancelar</button>

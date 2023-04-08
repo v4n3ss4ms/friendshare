@@ -1,12 +1,28 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { ExpensesGroupComponent } from './expenses-group/expenses-group.component';
+import { ExpensesListComponent } from './expenses-list/expenses-list.component';
+import { ExpenseItemComponent } from './expense-item/expense-item.component';
+import { BalancesListComponent } from './balances-list/balances-list.component';
+import { BalanceItemComponent } from './balance-item/balance-item.component';
+import { NewExpensePopupComponent } from './new-expense-popup/new-expense-popup.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
-      ],
+        AppComponent,
+        HeaderComponent,
+        FooterComponent,
+        ExpensesGroupComponent,
+        ExpensesListComponent,
+        ExpenseItemComponent,
+        BalancesListComponent,
+        BalanceItemComponent,
+        NewExpensePopupComponent,
+      ]
     }).compileComponents();
   });
 
@@ -16,16 +32,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'friendshare'`, () => {
+  it(`should have as title 'friend$hare'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('friendshare');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('friendshare app is running!');
+    expect(app.title).toEqual('friend$hare');
   });
 });

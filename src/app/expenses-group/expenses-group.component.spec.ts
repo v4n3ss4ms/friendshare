@@ -1,6 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ExpensesGroupComponent } from './expenses-group.component';
+
+import { ExpensesListComponent } from '../expenses-list/expenses-list.component';
+import { ExpenseItemComponent } from '../expense-item/expense-item.component';
+import { BalancesListComponent } from '../balances-list/balances-list.component';
+import { BalanceItemComponent } from '../balance-item/balance-item.component';
+import { NewExpensePopupComponent } from '../new-expense-popup/new-expense-popup.component';
 
 describe('ExpensesGroupComponent', () => {
   let component: ExpensesGroupComponent;
@@ -8,9 +13,15 @@ describe('ExpensesGroupComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ExpensesGroupComponent ]
-    })
-    .compileComponents();
+      declarations: [
+        ExpensesGroupComponent,
+        ExpensesListComponent,
+        ExpenseItemComponent,
+        BalancesListComponent,
+        BalanceItemComponent,
+        NewExpensePopupComponent,
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ExpensesGroupComponent);
     component = fixture.componentInstance;

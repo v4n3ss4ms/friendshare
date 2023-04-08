@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
 import { NewExpensePopupComponent } from './new-expense-popup.component';
 
 describe('NewExpensePopupComponent', () => {
@@ -8,7 +8,10 @@ describe('NewExpensePopupComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewExpensePopupComponent ]
+      declarations: [ NewExpensePopupComponent ],
+      imports: [
+        FormsModule 
+      ],
     })
     .compileComponents();
 
