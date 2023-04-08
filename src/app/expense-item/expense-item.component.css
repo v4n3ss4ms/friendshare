@@ -1,4 +1,4 @@
-.expense {
+.expenses__item {
   border: 1px solid var(--c-secondary);
   border-radius: 0.25rem;
   padding: 1rem;
