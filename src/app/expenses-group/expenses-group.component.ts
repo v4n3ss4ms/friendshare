@@ -10,6 +10,7 @@ import { Currency } from '../../domain/currency';
   templateUrl: './expenses-group.component.html',
   styleUrls: ['./expenses-group.component.css'],
 })
+
 export class ExpensesGroupComponent implements OnInit {
   expensesData: Expense[] = [];
   usersData: User[] = [];
@@ -22,13 +23,18 @@ export class ExpensesGroupComponent implements OnInit {
     this.expensesData = this.expensesLocalRepository.getAll();
     this.usersData = this.usersLocalRepository.getAll();
   }
+  onOpenAddUser(): void {
+
+  }
+  onOpenAddExpense(): void {
+    
+  }
   onAddUser(): void {
     console.log('onAddUser');
     this.usersLocalRepository.addUser({
       id: 259,
       name: 'Ana222',
     });
-    console.log(this.usersData);
   }
   onAddExpense(): void {
     console.log('onAddExpense');
@@ -40,6 +46,5 @@ export class ExpensesGroupComponent implements OnInit {
       date: 1680280912000,
       userId: 11,
     });
-    console.log(this.expensesData);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Expense } from '../../domain/expense';
 import { User } from '../../domain/user';
 import { Currency } from '../../domain/currency';
@@ -9,7 +9,8 @@ import { UserWithBalance } from '../../domain/userWithBalance';
   templateUrl: './balances-list.component.html',
   styleUrls: ['./balances-list.component.css'],
 })
-export class BalancesListComponent {
+
+export class BalancesListComponent implements OnInit {
   @Input() expenses = [] as Expense[];
   @Input() users = [] as User[];
   usersWithBalance = [] as UserWithBalance[];
@@ -18,9 +19,7 @@ export class BalancesListComponent {
 
   ngOnInit(): void {
     this.usersCount = this.users.length;
-    this.totalGroupExpenses = this.getTotalGroupExpenses(
-      this.expenses
-    );
+    this.totalGroupExpenses = this.getTotalGroupExpenses(this.expenses);
     this.usersWithBalance = this.users.map((user) => {
       const totalUserExpenses = this.getTotalUserExpenses(
         this.expenses,
@@ -37,15 +36,9 @@ export class BalancesListComponent {
         currency: Currency.euro, // Hardcoded - Please check ReadMe notes
       };
     });
-
-    console.log('on init');
-    console.log(this.users);
   }
 
-  ngOnChanges(): void {
-    console.log('on changes');
-    console.log(this.users)
-  }
+  ngOnChange(): void {}
 
   getTotalGroupExpenses(expenses: Expense[]): number {
     const initialTotal: number = 0;
