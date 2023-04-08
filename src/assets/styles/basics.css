@@ -1,8 +1,11 @@
 :root {
     --c-primary: #9fd3c7 ;
     --c-secondary: #142d4c;
-    --c-basic-bg: #ececec;
+    --c-positive: #3ca832;
+    --c-negative: #e3171a;
 
+    --c-basic-bg: #ececec;
+    
     --f-basic: 'Dosis', sans-serif;
     --fw-primary: 300;
     --fw-secondary: 500;
@@ -49,7 +52,7 @@ ul {
 }
 
 section {
-    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .visually-hidden {

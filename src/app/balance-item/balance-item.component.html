@@ -1,1 +1,8 @@
-<p>balance-item works! {{userWithBalance.balance}}</p>
+<li class="balances__item balance">
+  <div class="balance__info">
+      <p class="balance__user">{{userWithBalance.name}}</p> 
+  </div>
+  <div class="balance__amount">
+      <p [ngClass]="userWithBalance.balance < 0 ? 'balance__amount-negative' : ''">{{userWithBalance.balance}}{{userWithBalance.currency}}</p>
+  </div>
+</li>

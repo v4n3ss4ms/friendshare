@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Expense } from '../../domain/expense';
 import { User } from '../../domain/user';
+import { Currency } from '../../domain/currency';
 import { UserWithBalance } from '../../domain/userWithBalance';
 
 @Component({
@@ -31,6 +32,7 @@ export class BalancesListComponent {
           totalUserExpenses,
           usersCount
         ),
+        currency: Currency.euro, // Hardcoded - Please check ReadMe notes
       };
     });
   }
