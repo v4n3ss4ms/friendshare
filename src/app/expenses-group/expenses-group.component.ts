@@ -53,6 +53,5 @@ export class ExpensesGroupComponent implements OnInit {
     this.expensesLocalRepository.addExpense(expense);
     this.expensesData = this.expensesLocalRepository.getAll(); // needed if getAll has quicksort
     console.log(this.expensesData);
-    
   }
 }

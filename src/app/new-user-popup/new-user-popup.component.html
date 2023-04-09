@@ -1,6 +1,17 @@
-<div class="">
-  <label for="name">Nombre: </label>
-  <input id="name" type="text" [formControl]="name" required />
-  <button type="button" (click)="onSaveUser()">Añadir</button>
-  <button type="button" (click)="onCancel()">Cancelar</button>
+<div class="pop-up">
+  <div class="pop-up__overlay"></div>
+  <div class="pop-up__box">
+    <h2 class="pop-up__title">Nuevo usuario</h2>
+    <div class="pop-up__form">
+      <div class="pop-up__form-item">
+        <label class="pop-up__label" for="name">Nombre: </label>
+        <input class="pop-up__input" id="name" type="text" [formControl]="name" required />
+      </div>
+      
+      <div class="pop-up__btn-wrapper">
+        <button class="pop-up__btn" type="button" (click)="onSaveUser()">Añadir</button>
+        <button class="pop-up__btn" type="button" (click)="onCancel()">Cancelar</button>
+      </div>
+    </div>
+  </div>
 </div>

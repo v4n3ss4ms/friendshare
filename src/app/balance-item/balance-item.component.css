@@ -9,6 +9,6 @@
 .balance__amount {
   color: var(--c-positive);
 }
-.balance__amount-negative {
+.balance__amount--negative {
   color: var(--c-negative);
 }

@@ -3,9 +3,21 @@
   background-color: var(--c-primary);
   justify-content: space-between;
   padding: 1rem;
+  align-items: center;
 }
 
 .group-info__actions {
   display: flex;
   gap: 1rem;
+  /* to improve */
+  height: 32px;
+}
+
+.group-info__btn {
+  border: none;
+  background: none;
+}
+
+.group-info__new-expense {
+  margin-top: 2px;
 }

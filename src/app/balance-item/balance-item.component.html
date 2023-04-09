@@ -3,6 +3,6 @@
       <p class="balance__user">{{userWithBalance.name}}</p> 
   </div>
   <div class="balance__amount">
-      <p [ngClass]="userWithBalance.balance < 0 ? 'balance__amount-negative' : ''">{{userWithBalance.balance}}{{userWithBalance.currency}}</p>
+      <p [ngClass]="userWithBalance.balance < 0 ? 'balance__amount--negative' : ''">{{userWithBalance.balance}}{{userWithBalance.currency}}</p>
   </div>
 </li>

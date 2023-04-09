@@ -21,6 +21,9 @@ body {
     background-color: var(--c-basic-bg);
     font-family: var(--f-basic);
     font-weight: var(--fw-primary);
+}
+
+app-root {
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -44,7 +47,7 @@ header, footer{
 
 main {
     margin: 0 auto;
-    min-width: 80vw;
+    width: 80vw;
 }
 
 ul {
@@ -64,3 +67,4 @@ section {
     white-space: nowrap; 
     width: 1px; 
 }
+
