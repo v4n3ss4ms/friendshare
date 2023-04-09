@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, DoCheck } from '@angular/core';
 import { Expense } from '../../domain/expense';
 import { User } from '../../domain/user';
 import { UserWithBalance } from '../../domain/userWithBalance';
@@ -9,8 +9,7 @@ import { GetUsersWithBalance } from '../../application/get-users-with-balance';
   templateUrl: './balances-list.component.html',
   styleUrls: ['./balances-list.component.css'],
 })
-
-export class BalancesListComponent implements OnInit {
+export class BalancesListComponent implements OnInit, DoCheck {
   @Input() expenses = [] as Expense[];
   @Input() users = [] as User[];
   usersWithBalance = [] as UserWithBalance[];
@@ -20,8 +19,15 @@ export class BalancesListComponent implements OnInit {
   constructor(private getUsersWithBalance: GetUsersWithBalance) {}
 
   ngOnInit(): void {
-    this.usersWithBalance = this.getUsersWithBalance.execute(this.expenses, this.users);
+    this.usersWithBalance = this.getUsersWithBalance.execute(
+      this.expenses,
+      this.users
+    );
   }
-
-  ngOnChange(): void {}
+  ngDoCheck() {
+    this.usersWithBalance = this.getUsersWithBalance.execute(
+      this.expenses,
+      this.users
+    );
+  }
 }

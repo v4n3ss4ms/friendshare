@@ -9,7 +9,6 @@ import { User } from '../../domain/user';
   templateUrl: './expenses-group.component.html',
   styleUrls: ['./expenses-group.component.css'],
 })
-
 export class ExpensesGroupComponent implements OnInit {
   expensesData = [] as Expense[];
   expenses = [] as Expense[];
@@ -37,7 +36,6 @@ export class ExpensesGroupComponent implements OnInit {
   addUser(user: User): void {
     this.isOpenAddUserPopup = false;
     this.usersLocalRepository.addUser(user);
-    console.log(this.usersData);
   }
 
   onOpenAddExpense(): void {
@@ -51,7 +49,5 @@ export class ExpensesGroupComponent implements OnInit {
   addExpense(expense: Expense): void {
     this.isOpenAddExpensePopup = false;
     this.expensesLocalRepository.addExpense(expense);
-    this.expensesData = this.expensesLocalRepository.getAll(); // needed if getAll has quicksort
-    console.log(this.expensesData);
   }
 }
