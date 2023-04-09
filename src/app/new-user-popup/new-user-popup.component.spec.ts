@@ -1,18 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { NewExpensePopupComponent } from './new-expense-popup.component';
+import { NewUserPopupComponent } from './new-user-popup.component';
 
-describe('NewExpensePopupComponent', () => {
-  let component: NewExpensePopupComponent;
-  let fixture: ComponentFixture<NewExpensePopupComponent>;
+describe('NewUserPopupComponent', () => {
+  let component: NewUserPopupComponent;
+  let fixture: ComponentFixture<NewUserPopupComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NewExpensePopupComponent],
+      declarations: [ NewUserPopupComponent ],
       imports: [FormsModule, ReactiveFormsModule],
-    }).compileComponents();
+    })
+    .compileComponents();
 
-    fixture = TestBed.createComponent(NewExpensePopupComponent);
+    fixture = TestBed.createComponent(NewUserPopupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

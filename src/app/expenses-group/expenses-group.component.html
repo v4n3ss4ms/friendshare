@@ -19,4 +19,7 @@
 <app-expenses-list [expenses]="expensesData" [users]="usersData"/>
 <app-balances-list [expenses]="expensesData" [users]="usersData"/>
 </main>
+
 <app-new-expense-popup *ngIf="isOpenAddExpensePopup" [users]="usersData" (newExpenseEvent)="addExpense($event)" (closeNewExpenseEvent)="onCloseAddExpense()"/>
+
+<app-new-user-popup *ngIf="isOpenAddUserPopup" (newUserEvent)="addUser($event)" (closeNewUserEvent)="onCloseAddUser()"/>

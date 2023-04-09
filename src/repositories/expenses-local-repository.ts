@@ -42,11 +42,12 @@ export class ExpensesLocalRepository implements ExpensesRepository {
   ];
   getAll(): Expense[] {
     return this.quickSort(this.data);
+    //return this.data;
   }
   addExpense(expense: Expense): void {
     this.data.unshift(expense);
   }
-  quickSort([x = [], ...xs]: any): Expense[] {
+  private quickSort([x = [], ...xs]: any): Expense[] {
     return x.length === 0
       ? []
       : [

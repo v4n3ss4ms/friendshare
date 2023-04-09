@@ -8,6 +8,7 @@ import { ExpenseItemComponent } from './expense-item/expense-item.component';
 import { BalancesListComponent } from './balances-list/balances-list.component';
 import { BalanceItemComponent } from './balance-item/balance-item.component';
 import { NewExpensePopupComponent } from './new-expense-popup/new-expense-popup.component';
+import { NewUserPopupComponent } from './new-user-popup/new-user-popup.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -22,6 +23,7 @@ describe('AppComponent', () => {
         BalancesListComponent,
         BalanceItemComponent,
         NewExpensePopupComponent,
+        NewUserPopupComponent,
       ]
     }).compileComponents();
   });

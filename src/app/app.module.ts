@@ -11,6 +11,7 @@ import { ExpenseItemComponent } from './expense-item/expense-item.component';
 import { BalancesListComponent } from './balances-list/balances-list.component';
 import { BalanceItemComponent } from './balance-item/balance-item.component';
 import { NewExpensePopupComponent } from './new-expense-popup/new-expense-popup.component';
+import { NewUserPopupComponent } from './new-user-popup/new-user-popup.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NewExpensePopupComponent } from './new-expense-popup/new-expense-popup.
     ExpenseItemComponent,
     BalancesListComponent,
     BalanceItemComponent,
-    NewExpensePopupComponent
+    NewExpensePopupComponent,
+    NewUserPopupComponent
   ],
   imports: [
     BrowserModule,
