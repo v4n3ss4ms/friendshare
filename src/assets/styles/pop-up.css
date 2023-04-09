@@ -1,5 +1,5 @@
 .pop-up {
-  position:absolute;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -23,7 +23,7 @@
   border: 2px solid var(--c-primary);
   padding: 1.5rem 1rem;
   border-radius: 0.25rem;
-  
+
   z-index: 1;
 }
 
@@ -39,7 +39,7 @@
   background: var(--c-primary);
   color: var(--c-secondary);
   border: none;
-  transition: background ease-in 1s, color ease-in .5s;
+  transition: background ease-in 0.3s, color ease-in 0.3s;
   border-radius: 0.25rem;
   font-weight: var(--fw-bold);
   padding: 0.5rem 0;
@@ -48,6 +48,12 @@
 .pop-up__btn:hover {
   background: var(--c-secondary);
   color: var(--c-primary);
+}
+
+.pop-up__btn[disabled] {
+  background: var(--c-grey-light);
+  color: var(--c-grey-med);
+  cursor: default;
 }
 
 .pop-up__form-item {
@@ -67,5 +73,9 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap:1rem;
+  gap: 1rem;
+}
+
+.pop-up__form--error {
+  color: var(--c-error);
 }

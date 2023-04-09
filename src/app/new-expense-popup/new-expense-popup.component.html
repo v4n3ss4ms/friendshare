@@ -19,8 +19,9 @@
           </option>
         </select>
       </div>
+      <p [ngClass]="!isValid ? 'pop-up__form--error' : ''">* Por favor rellena todos los campos</p>
       <div class="pop-up__btn-wrapper">
-        <button class="pop-up__btn" type="button" (click)="onSaveExpense()">Añadir</button>
+        <button class="pop-up__btn" type="button" (click)="onSaveExpense()" [disabled]="!isValid">Añadir</button>
         <button class="pop-up__btn" type="button" (click)="onCancel()">Cancelar</button>
       </div>
     </div>

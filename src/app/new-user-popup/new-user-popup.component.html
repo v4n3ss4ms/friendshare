@@ -9,7 +9,7 @@
       </div>
       
       <div class="pop-up__btn-wrapper">
-        <button class="pop-up__btn" type="button" (click)="onSaveUser()">Añadir</button>
+        <button class="pop-up__btn" type="button" (click)="onSaveUser()" [disabled]="!isValid">Añadir</button>
         <button class="pop-up__btn" type="button" (click)="onCancel()">Cancelar</button>
       </div>
     </div>

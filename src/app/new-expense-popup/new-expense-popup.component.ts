@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { User } from '../../domain/user';
 import { Expense } from '../../domain/expense';
 import { Currency } from '../../domain/currency';
@@ -15,18 +15,32 @@ export class NewExpensePopupComponent implements OnInit {
   @Input() users = [] as User[];
   @Output() newExpenseEvent = new EventEmitter<Expense>();
   @Output() closeNewExpenseEvent = new EventEmitter();
-  name = new FormControl('');
-  amount = new FormControl('');
-  user = new FormControl('');
+  name = new FormControl('', [Validators.required]);
+  amount = new FormControl('', [Validators.required]);
+  user = new FormControl('', [Validators.required]);
+  isValid = false as boolean;
 
   constructor(
     private getRandomNumber: GetRandomNumber,
     private stringToFloat: StringToFloat
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.name.valueChanges.subscribe(() => this.updateIsValid());
+    this.amount.valueChanges.subscribe(() => this.updateIsValid());
+    this.user.valueChanges.subscribe(() => this.updateIsValid());
+  }
+
   onCancel(): void {
     this.closeNewExpenseEvent.emit();
+  }
+
+  updateIsValid(): void {
+    this.isValid = !(
+      !!this.amount.errors ||
+      !!this.name.errors ||
+      !!this.user.errors
+    );
   }
 
   onSaveExpense(): void {
