@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Expense } from '../../domain/expense';
 import { User } from '../../domain/user';
-import { Currency } from '../../domain/currency';
 import { UserWithBalance } from '../../domain/userWithBalance';
+import { GetUsersWithBalance } from '../../application/get-users-with-balance';
 
 @Component({
   selector: 'app-balances-list',
@@ -17,53 +17,11 @@ export class BalancesListComponent implements OnInit {
   usersCount = 0 as number;
   totalGroupExpenses = 0 as number;
 
+  constructor(private getUsersWithBalance: GetUsersWithBalance) {}
+
   ngOnInit(): void {
-    this.usersCount = this.users.length;
-    this.totalGroupExpenses = this.getTotalGroupExpenses(this.expenses);
-    this.usersWithBalance = this.users.map((user) => {
-      const totalUserExpenses = this.getTotalUserExpenses(
-        this.expenses,
-        user.id
-      );
-      return {
-        ...user,
-        totalExpenses: totalUserExpenses,
-        balance: this.getUserBalance(
-          this.totalGroupExpenses,
-          totalUserExpenses,
-          this.usersCount
-        ),
-        currency: Currency.euro, // Hardcoded - Please check ReadMe notes
-      };
-    });
+    this.usersWithBalance = this.getUsersWithBalance.execute(this.expenses, this.users);
   }
 
   ngOnChange(): void {}
-
-  getTotalGroupExpenses(expenses: Expense[]): number {
-    const initialTotal: number = 0;
-    return expenses.reduce(
-      (acc: number, expense: Expense) => acc + expense.amount,
-      initialTotal
-    );
-  }
-
-  getTotalUserExpenses(expenses: Expense[], userId: number): number {
-    const initialTotal: number = 0;
-    return expenses
-      .filter((expense) => expense.userId === userId)
-      .reduce(
-        (acc: number, expense: Expense) => acc + expense.amount,
-        initialTotal
-      );
-  }
-
-  getUserBalance(
-    totalGroupExpenses: number,
-    totalUserExpenses: number,
-    usersCount: number
-  ): number {
-    const balance: number = totalUserExpenses - totalGroupExpenses / usersCount;
-    return Math.round(balance * 100) / 100;
-  }
 }
