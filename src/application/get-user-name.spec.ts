@@ -4,7 +4,7 @@ import { User } from '../domain/user';
 const getUserName: GetUserName = new GetUserName();
 const USER_ID = 18;
 const WRONG_USER_ID = 567;
-const userDataMocked: User[] = [
+const usersDataMocked: User[] = [
   {
     id: 1,
     name: 'Alejandra',
@@ -25,12 +25,12 @@ const userDataMocked: User[] = [
 
 describe('GetUserName', () => {
   it('should return an user name', () => {
-    const name: string = getUserName.execute(USER_ID, userDataMocked);
+    const name: string = getUserName.execute(USER_ID, usersDataMocked);
     expect(name).toBe('Cristina');
   });
 
   it('should return a non-exist user', () => {
-    const name: string = getUserName.execute(WRONG_USER_ID, userDataMocked);
+    const name: string = getUserName.execute(WRONG_USER_ID, usersDataMocked);
     expect(name).toBe('This user no longer exists');
   });
 });
