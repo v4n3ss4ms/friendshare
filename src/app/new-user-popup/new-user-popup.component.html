@@ -4,10 +4,10 @@
     <h2 class="pop-up__title">Nuevo usuario</h2>
     <div class="pop-up__form">
       <div class="pop-up__form-item">
-        <label class="pop-up__label" for="name">Nombre: </label>
+        <label class="pop-up__label" for="name">* Nombre: </label>
         <input class="pop-up__input" id="name" type="text" [formControl]="name" required />
       </div>
-      
+      <p [ngClass]="!isValid ? 'pop-up__form--error' : ''">* Campo obligatorio</p>
       <div class="pop-up__btn-wrapper">
         <button class="pop-up__btn" type="button" (click)="onSaveUser()" [disabled]="!isValid">Añadir</button>
         <button class="pop-up__btn" type="button" (click)="onCancel()">Cancelar</button>

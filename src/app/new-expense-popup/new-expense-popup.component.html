@@ -4,22 +4,22 @@
     <h2 class="pop-up__title">Nuevo gasto</h2>
     <div class="pop-up__form">
       <div class="pop-up__form-item">
-        <label class="pop-up__label" for="name">Nombre: </label>
+        <label class="pop-up__label" for="name">* Nombre: </label>
         <input class="pop-up__input" id="name" type="text" [formControl]="name" required />
       </div>
       <div class="pop-up__form-item">
-        <label class="pop-up__label" for="amount">Cantidad: </label>
+        <label class="pop-up__label" for="amount">* Cantidad: </label>
         <input class="pop-up__input" id="amount" type="number" [formControl]="amount" required />
       </div>
       <div class="pop-up__form-item">
-        <label class="pop-up__label" for="user">Usuario</label>
+        <label class="pop-up__label" for="user">* Usuario</label>
         <select class="pop-up__input" id="user" [formControl]="user" required>
           <option *ngFor="let user of users" [value]="user.id">
             {{ user.name }}
           </option>
         </select>
       </div>
-      <p [ngClass]="!isValid ? 'pop-up__form--error' : ''">* Por favor rellena todos los campos</p>
+      <p [ngClass]="!isValid ? 'pop-up__form--error' : ''">* Campo obligatorio</p>
       <div class="pop-up__btn-wrapper">
         <button class="pop-up__btn" type="button" (click)="onSaveExpense()" [disabled]="!isValid">Añadir</button>
         <button class="pop-up__btn" type="button" (click)="onCancel()">Cancelar</button>
