@@ -22,4 +22,4 @@
 
 <app-new-expense-popup *ngIf="isOpenAddExpensePopup" [users]="usersData" (newExpenseEvent)="onAddExpense($event)" (closeNewExpenseEvent)="onCloseAddExpense()"/>
 
-<app-new-user-popup *ngIf="isOpenAddUserPopup" (newUserEvent)="addUser($event)" (closeNewUserEvent)="onCloseAddUser()"/>
+<app-new-user-popup *ngIf="isOpenAddUserPopup" (newUserEvent)="onAddUser($event)" (closeNewUserEvent)="onCloseAddUser()"/>
