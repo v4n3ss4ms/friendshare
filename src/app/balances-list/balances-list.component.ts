@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, DoCheck } from '@angular/core';
-import { Expense } from '../../domain/expense';
+import { Expense } from '../../features/expenses/domain/expense';
 import { User } from '../../features/users/domain/user';
 import { UserWithBalance } from '../../features/users/domain/userWithBalance';
 import { GetUsersWithBalance } from '../../features/users/application/get-users-with-balance';
@@ -10,9 +10,9 @@ import { GetUsersWithBalance } from '../../features/users/application/get-users-
   styleUrls: ['./balances-list.component.css'],
 })
 export class BalancesListComponent implements OnInit, DoCheck {
-  @Input() expenses = [] as Expense[];
-  @Input() users = [] as User[];
-  usersWithBalance = [] as UserWithBalance[];
+  @Input() expenses = [] as Expense[]; // !!
+  @Input() users = [] as User[]; // !!
+  usersWithBalance = [] as UserWithBalance[]; // !!
   usersCount = 0 as number;
   totalGroupExpenses = 0 as number;
 

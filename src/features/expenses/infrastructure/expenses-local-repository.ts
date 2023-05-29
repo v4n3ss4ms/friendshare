@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Expense } from '../domain/expense';
 import { ExpensesRepository } from '../domain/expenses-repository';
-import { Currency } from '../domain/currency';
+import { Currency } from '../../core/domain/currency';
 @Injectable({
   providedIn: 'root',
 })

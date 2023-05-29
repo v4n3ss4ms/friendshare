@@ -1,7 +1,7 @@
 import { GetUsersWithBalance } from './get-users-with-balance';
 import { User } from '../domain/user';
-import { Expense } from '../../../domain/expense';
-import { Currency } from '../../../domain/currency';
+import { Expense } from '../../expenses/domain/expense';
+import { Currency } from '../../core/domain/currency';
 import { UserWithBalance } from '../domain/userWithBalance';
 
 const getUsersWithBalance: GetUsersWithBalance = new GetUsersWithBalance();

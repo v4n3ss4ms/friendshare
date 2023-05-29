@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ExpensesLocalRepository } from '../../repositories/expenses-local-repository';
-import { Expense } from '../../domain/expense';
+import { ExpensesLocalRepository } from '../../features/expenses/infrastructure/expenses-local-repository';
+import { Expense } from '../../features/expenses/domain/expense';
 import { UsersLocalRepository } from '../../features/users/infrastructure/users-local-repository';
 import { User } from '../../features/users/domain/user';
 
@@ -22,8 +22,8 @@ export class ExpensesGroupComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.expensesData = this.expensesLocalRepository.getAll();
-    this.usersData = this.usersLocalRepository.getAll();
+    this.expensesData = this.expensesLocalRepository.getAll(); // !!
+    this.usersData = this.usersLocalRepository.getAll(); // !!
   }
 
   onOpenAddUser(): void {
@@ -35,7 +35,7 @@ export class ExpensesGroupComponent implements OnInit {
 
   addUser(user: User): void {
     this.isOpenAddUserPopup = false;
-    this.usersLocalRepository.addUser(user);
+    this.usersLocalRepository.addUser(user); // !!
   }
 
   onOpenAddExpense(): void {
@@ -48,6 +48,6 @@ export class ExpensesGroupComponent implements OnInit {
 
   addExpense(expense: Expense): void {
     this.isOpenAddExpensePopup = false;
-    this.expensesLocalRepository.addExpense(expense);
+    this.expensesLocalRepository.addExpense(expense); // !!
   }
 }

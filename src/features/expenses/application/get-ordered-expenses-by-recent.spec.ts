@@ -1,6 +1,6 @@
 import { GetOrderedExpensesByRecent } from './get-ordered-expenses-by-recent';
 import { Expense } from '../domain/expense';
-import { Currency } from '../domain/currency';
+import { Currency } from '../../core/domain/currency';
 
 const getOrderedExpensesByRecent: GetOrderedExpensesByRecent = new GetOrderedExpensesByRecent();
 const expensesDataMocked: Expense[] = [
