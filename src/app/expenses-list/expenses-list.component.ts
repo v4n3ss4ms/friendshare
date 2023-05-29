@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, DoCheck } from '@angular/core';
 import { Expense } from '../../domain/expense';
-import { User } from '../../domain/user';
+import { User } from '../../features/users/domain/user';
 import { GetOrderedExpensesByRecent } from '../../application/get-ordered-expenses-by-recent';
 
 @Component({

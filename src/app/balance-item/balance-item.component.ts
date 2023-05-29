@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { UserWithBalance } from '../../domain/userWithBalance';
+import { UserWithBalance } from '../../features/users/domain/userWithBalance';
 
 @Component({
   selector: 'app-balance-item',

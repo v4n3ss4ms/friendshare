@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { User } from '../../domain/user';
+import { User } from '../../features/users/domain/user';
 import { GetRandomNumber } from '../../application/get-random-number';
 
 @Component({

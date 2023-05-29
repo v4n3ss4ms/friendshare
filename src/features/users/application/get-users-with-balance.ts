@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Expense } from '../domain/expense';
+import { Expense } from '../../../domain/expense';
 import { User } from '../domain/user';
-import { Currency } from '../domain/currency';
+import { Currency } from '../../../domain/currency';
 import { UserWithBalance } from '../domain/userWithBalance';
 
 @Injectable({

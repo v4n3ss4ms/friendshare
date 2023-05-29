@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { User } from '../../domain/user';
+import { User } from '../../features/users/domain/user';
 import { Expense } from '../../domain/expense';
 import { Currency } from '../../domain/currency';
 import { GetRandomNumber } from '../../application/get-random-number';

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ExpensesLocalRepository } from '../../repositories/expenses-local-repository';
 import { Expense } from '../../domain/expense';
-import { UsersLocalRepository } from '../../repositories/users-local-repository';
-import { User } from '../../domain/user';
+import { UsersLocalRepository } from '../../features/users/infrastructure/users-local-repository';
+import { User } from '../../features/users/domain/user';
 
 @Component({
   selector: 'app-expenses-group',

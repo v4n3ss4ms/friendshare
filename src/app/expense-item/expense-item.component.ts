@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Expense } from '../../domain/expense';
-import { User } from '../../domain/user';
-import { GetUserName } from '../../application/get-user-name';
+import { User } from '../../features/users/domain/user';
+import { GetUserName } from '../../features/users/application/get-user-name';
 
 @Component({
   selector: 'app-expense-item',

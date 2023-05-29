@@ -1,5 +1,5 @@
 import { User } from './user';
-import { Currency } from './currency';
+import { Currency } from '../../../domain/currency';
 
 export interface UserWithBalance extends User {
   totalExpenses: number;
