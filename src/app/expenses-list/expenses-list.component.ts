@@ -13,9 +13,6 @@ import { GetOrderedExpensesByRecent } from '../../features/expenses/application/
 export class ExpensesListComponent implements OnInit, DoCheck {
   @Input() expenses = [] as Expense[];
   @Input() users = [] as User[];
-  //user = {} as User;
-  //user:User|null = null;
-  //user:Partial<User> = {};
   orderedExpenses = [] as Expense[];
   constructor(private getOrderedExpensesByRecent: GetOrderedExpensesByRecent) {}
 
