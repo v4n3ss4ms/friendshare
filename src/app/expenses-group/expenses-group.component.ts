@@ -15,8 +15,8 @@ import { AddUser} from "../../features/users/application/add-user";
 export class ExpensesGroupComponent implements OnInit {
   expensesData = [] as Expense[]; // !!
   usersData = [] as User[]; // !!
-  isOpenAddUserPopup = false as boolean;
-  isOpenAddExpensePopup = false as boolean;
+  isOpenAddUserPopup: boolean = false;
+  isOpenAddExpensePopup: boolean = false;
 
   constructor(
     private getExpenses: GetExpenses,
