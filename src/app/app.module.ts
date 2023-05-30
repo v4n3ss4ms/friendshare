@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {InjectionToken, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -12,6 +12,11 @@ import { BalancesListComponent } from './balances-list/balances-list.component';
 import { BalanceItemComponent } from './balance-item/balance-item.component';
 import { NewExpensePopupComponent } from './new-expense-popup/new-expense-popup.component';
 import { NewUserPopupComponent } from './new-user-popup/new-user-popup.component';
+import {UsersLocalRepository} from "../features/users/infrastructure/users-local-repository";
+import {ExpensesLocalRepository} from "../features/expenses/infrastructure/expenses-local-repository";
+
+export const USERS_REPOSITORY = new InjectionToken('UsersRepository');
+export const EXPENSES_REPOSITORY = new InjectionToken('ExpensesRepository');
 
 @NgModule({
   declarations: [
@@ -30,7 +35,14 @@ import { NewUserPopupComponent } from './new-user-popup/new-user-popup.component
     BrowserModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: USERS_REPOSITORY,
+    useClass: UsersLocalRepository,
+  },
+  {
+    provide: EXPENSES_REPOSITORY,
+    useClass: ExpensesLocalRepository,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
