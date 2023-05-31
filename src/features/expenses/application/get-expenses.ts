@@ -10,8 +10,8 @@ export class GetExpenses {
   expenses: Array<Expense> = [];
   constructor(private expensesLocalRepository: ExpensesLocalRepository) {}
 
-  execute(): Expense[] {
-    this.expenses = this.expensesLocalRepository.getAll();
+  async execute(): Promise<Expense[]> {
+    this.expenses = await this.expensesLocalRepository.getAll();
     return this.expenses;
   }
 }

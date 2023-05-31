@@ -8,8 +8,8 @@ export class GetUsers {
   users: Array<User> = [];
   constructor(private usersLocalRepository: UsersLocalRepository) {}
 
-  execute(): User[] {
-    this.users = this.usersLocalRepository.getAll();
+  async execute(): Promise<User[]> {
+    this.users = await this.usersLocalRepository.getAll();
     return this.users;
   }
 }

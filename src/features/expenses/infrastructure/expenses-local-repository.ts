@@ -40,7 +40,7 @@ export class ExpensesLocalRepository implements ExpensesRepository {
       userId: 6,
     },
   ];
-  getAll(): Expense[] {
+  async getAll(): Promise<Expense[]> {
     return this.data;
   }
   addExpense(expense: Expense): void {

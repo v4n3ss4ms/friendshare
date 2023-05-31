@@ -25,9 +25,9 @@ export class ExpensesGroupComponent implements OnInit {
     private addUser: AddUser
 ) {}
 
-  ngOnInit(): void {
-    this.expensesData = this.getExpenses.execute();
-    this.usersData = this.getUsers.execute();
+  async ngOnInit(): Promise<void> {
+    this.expensesData = await this.getExpenses.execute();
+    this.usersData = await this.getUsers.execute();
   }
 
   onOpenAddUser(): void {
