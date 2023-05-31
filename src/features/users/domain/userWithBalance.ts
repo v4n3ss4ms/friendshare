@@ -1,8 +1,4 @@
 import { User } from './user';
-import { Currency } from '../../core/domain/currency';
+import {Balance} from "../../balances/domain/balance";
 
-export interface UserWithBalance extends User {
-  totalExpenses: number;
-  balance: number;
-  currency: Currency;
-}
+export interface UserWithBalance extends User, Balance {}
