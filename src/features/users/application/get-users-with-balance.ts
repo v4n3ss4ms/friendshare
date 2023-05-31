@@ -9,9 +9,9 @@ import { UserWithBalance } from '../domain/userWithBalance';
 })
 export class GetUsersWithBalance {
   constructor() {}
-  usersWithBalance = [] as UserWithBalance[];
-  usersCount = 0 as number;
-  totalGroupExpenses = 0 as number;
+  usersWithBalance: UserWithBalance[] = [];
+  usersCount: number = 0;
+  totalGroupExpenses: number = 0;
 
   execute(expenses: Expense[], users: User[]): UserWithBalance[] {
     this.usersCount = users.length;

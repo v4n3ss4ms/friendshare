@@ -9,9 +9,11 @@ import { GetUserName } from '../../features/users/application/get-user-name';
   styleUrls: ['./expense-item.component.css'],
 })
 export class ExpenseItemComponent implements OnInit {
-  @Input() expense = {} as Expense;
-  @Input() users = [] as User[];
-  date = '' as string;
+  //@Input() expense: Partial<Expense> = {};
+  @Input() expense: Expense | any = {}; // !!
+  //@Input() expense = {} as Expense;
+  @Input() users: User[] = [];
+  date: string = '';
 
   constructor(public getUserName: GetUserName) {}
 

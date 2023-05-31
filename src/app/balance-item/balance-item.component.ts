@@ -7,7 +7,7 @@ import { UserWithBalance } from '../../features/users/domain/userWithBalance';
   styleUrls: ['./balance-item.component.css']
 })
 export class BalanceItemComponent {
-  @Input() userWithBalance = {} as UserWithBalance;
+  @Input() userWithBalance: Partial<UserWithBalance> = {};
 
   ngOnInit(): void {}
 }

@@ -13,8 +13,8 @@ import { AddUser} from "../../features/users/application/add-user";
 })
 
 export class ExpensesGroupComponent implements OnInit {
-  expensesData = [] as Expense[]; // !!
-  usersData = [] as User[]; // !!
+  expensesData: Expense[] = [];
+  usersData: User[] = [];
   isOpenAddUserPopup: boolean = false;
   isOpenAddExpensePopup: boolean = false;
 

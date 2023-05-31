@@ -12,7 +12,7 @@ export class NewUserPopupComponent implements OnInit {
   @Output() newUserEvent = new EventEmitter<User>();
   @Output() closeNewUserEvent = new EventEmitter();
   name = new FormControl('');
-  isValid = false as boolean;
+  isValid: boolean = false;
 
   constructor(private getRandomNumber: GetRandomNumber) {}
 

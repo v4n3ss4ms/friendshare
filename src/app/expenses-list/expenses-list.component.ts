@@ -11,9 +11,9 @@ import { GetOrderedExpensesByRecent } from '../../features/expenses/application/
 
 })
 export class ExpensesListComponent implements OnInit, DoCheck {
-  @Input() expenses = [] as Expense[];
-  @Input() users = [] as User[];
-  orderedExpenses = [] as Expense[];
+  @Input() expenses: Expense[] = [];
+  @Input() users: User[] = [];
+  orderedExpenses: Expense[] = [];
   constructor(private getOrderedExpensesByRecent: GetOrderedExpensesByRecent) {}
 
   ngOnInit(): void {

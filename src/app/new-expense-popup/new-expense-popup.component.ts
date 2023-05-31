@@ -12,13 +12,13 @@ import { StringToFloat } from '../../features/core/application/string-to-float';
   styleUrls: ['./new-expense-popup.component.css'],
 })
 export class NewExpensePopupComponent implements OnInit {
-  @Input() users = [] as User[];
+  @Input() users: User[] = [];
   @Output() newExpenseEvent = new EventEmitter<Expense>();
   @Output() closeNewExpenseEvent = new EventEmitter();
   name = new FormControl('', [Validators.required]);
   amount = new FormControl('', [Validators.required]);
   user = new FormControl('', [Validators.required]);
-  isValid = false as boolean;
+  isValid: boolean = false;
 
   constructor(
     private getRandomNumber: GetRandomNumber,

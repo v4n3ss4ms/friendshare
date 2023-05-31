@@ -10,11 +10,11 @@ import { GetUsersWithBalance } from '../../features/users/application/get-users-
   styleUrls: ['./balances-list.component.css'],
 })
 export class BalancesListComponent implements OnInit, DoCheck {
-  @Input() expenses = [] as Expense[]; // !!
-  @Input() users = [] as User[]; // !!
-  usersWithBalance = [] as UserWithBalance[]; // !!
-  usersCount = 0 as number;
-  totalGroupExpenses = 0 as number;
+  @Input() expenses: Expense[] = [];
+  @Input() users: User[] = [];
+  usersWithBalance: UserWithBalance[] = [];
+  usersCount: number = 0;
+  totalGroupExpenses:number = 0;
 
   constructor(private getUsersWithBalance: GetUsersWithBalance) {}
 
