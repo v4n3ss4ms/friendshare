@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Expense } from '../../features/expenses/domain/expense';
-import { User } from '../../features/users/domain/user';
-import { GetExpenses} from "../../features/expenses/application/get-expenses";
-import { AddExpense} from "../../features/expenses/application/add-expense";
-import { GetUsers} from "../../features/users/application/get-users";
-import { AddUser} from "../../features/users/application/add-user";
+import { Expense } from '../../domain/expense';
+import { User } from '../../../users/domain/user';
+import { GetExpenses} from "../../application/get-expenses";
+import { AddExpense} from "../../application/add-expense";
+import { GetUsers} from "../../../users/application/get-users";
+import { AddUser} from "../../../users/application/add-user";
 
 @Component({
   selector: 'app-expenses-group',

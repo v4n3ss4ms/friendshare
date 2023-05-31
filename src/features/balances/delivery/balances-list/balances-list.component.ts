@@ -1,8 +1,8 @@
 import { Component, Input, OnInit, DoCheck } from '@angular/core';
-import { Expense } from '../../features/expenses/domain/expense';
-import { User } from '../../features/users/domain/user';
-import { UserWithBalance } from '../../features/users/domain/userWithBalance';
-import { GetUsersWithBalance } from '../../features/users/application/get-users-with-balance';
+import { Expense } from '../../../expenses/domain/expense';
+import { User } from '../../../users/domain/user';
+import { UserWithBalance } from '../../../users/domain/userWithBalance';
+import { GetUsersWithBalance } from '../../../users/application/get-users-with-balance';
 
 @Component({
   selector: 'app-balances-list',

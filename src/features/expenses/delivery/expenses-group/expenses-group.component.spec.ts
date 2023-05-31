@@ -3,10 +3,10 @@ import { ExpensesGroupComponent } from './expenses-group.component';
 
 import { ExpensesListComponent } from '../expenses-list/expenses-list.component';
 import { ExpenseItemComponent } from '../expense-item/expense-item.component';
-import { BalancesListComponent } from '../balances-list/balances-list.component';
-import { BalanceItemComponent } from '../balance-item/balance-item.component';
+import { BalancesListComponent } from '../../../balances/delivery/balances-list/balances-list.component';
+import { BalanceItemComponent } from '../../../balances/delivery/balance-item/balance-item.component';
 import { NewExpensePopupComponent } from '../new-expense-popup/new-expense-popup.component';
-import { NewUserPopupComponent } from '../new-user-popup/new-user-popup.component';
+import { NewUserPopupComponent } from '../../../users/delivery/new-user-popup/new-user-popup.component';
 
 describe('ExpensesGroupComponent', () => {
   let component: ExpensesGroupComponent;

@@ -1,10 +1,10 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { User } from '../../features/users/domain/user';
-import { Expense } from '../../features/expenses/domain/expense';
-import { Currency } from '../../features/core/domain/currency';
-import { GetRandomNumber } from '../../features/core/application/get-random-number';
-import { StringToFloat } from '../../features/core/application/string-to-float';
+import { User } from '../../../users/domain/user';
+import { Expense } from '../../domain/expense';
+import { Currency } from '../../../core/domain/currency';
+import { GetRandomNumber } from '../../../core/application/get-random-number';
+import { StringToFloat } from '../../../core/application/string-to-float';
 
 @Component({
   selector: 'app-new-expense-popup',

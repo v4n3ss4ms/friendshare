@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { User } from '../../features/users/domain/user';
-import { GetRandomNumber } from '../../features/core/application/get-random-number';
+import { User } from '../../domain/user';
+import { GetRandomNumber } from '../../../core/application/get-random-number';
 
 @Component({
   selector: 'app-new-user-popup',

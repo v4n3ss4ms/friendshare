@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { ExpensesGroupComponent } from './expenses-group/expenses-group.component';
-import { ExpensesListComponent } from './expenses-list/expenses-list.component';
-import { ExpenseItemComponent } from './expense-item/expense-item.component';
-import { BalancesListComponent } from './balances-list/balances-list.component';
-import { BalanceItemComponent } from './balance-item/balance-item.component';
-import { NewExpensePopupComponent } from './new-expense-popup/new-expense-popup.component';
-import { NewUserPopupComponent } from './new-user-popup/new-user-popup.component';
+import { HeaderComponent } from '../features/core/delivery/header/header.component';
+import { FooterComponent } from '../features/core/delivery/footer/footer.component';
+import { ExpensesGroupComponent } from '../features/expenses/delivery/expenses-group/expenses-group.component';
+import { ExpensesListComponent } from '../features/expenses/delivery/expenses-list/expenses-list.component';
+import { ExpenseItemComponent } from '../features/expenses/delivery/expense-item/expense-item.component';
+import { BalancesListComponent } from '../features/balances/delivery/balances-list/balances-list.component';
+import { BalanceItemComponent } from '../features/balances/delivery/balance-item/balance-item.component';
+import { NewExpensePopupComponent } from '../features/expenses/delivery/new-expense-popup/new-expense-popup.component';
+import { NewUserPopupComponent } from '../features/users/delivery/new-user-popup/new-user-popup.component';
 import {UsersLocalRepository} from "../features/users/infrastructure/users-local-repository";
 import {ExpensesLocalRepository} from "../features/expenses/infrastructure/expenses-local-repository";
 
