@@ -7,8 +7,7 @@ import { UserWithBalance } from '../../../users/domain/userWithBalance';
   styleUrls: ['./balance-item.component.css']
 })
 export class BalanceItemComponent {
-  // @Input() userWithBalance: Partial<UserWithBalance> = {}; // !!  Object is possibly 'undefined'.
-  @Input() userWithBalance = {} as UserWithBalance;
+  @Input() userWithBalance!: UserWithBalance;
 
   ngOnInit(): void {}
 }
