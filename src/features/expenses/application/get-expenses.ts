@@ -5,8 +5,6 @@ import { ExpensesLocalRepository } from '../infrastructure/expenses-local-reposi
   providedIn: 'root',
 })
 export class GetExpenses {
-  //expenses: Partial<Expense>[] = [];
-  // error <html>TS2322: Type 'Partial<Expense>' is not assignable to type 'Expense[]'. Type 'Partial<Expense>' is not assignable to type 'Expense'. Types of property 'id' are incompatible. Type 'number | undefined' is not assignable to type 'number'. Type 'undefined' is not assignable to type 'number'.
   expenses: Array<Expense> = [];
   constructor(private expensesLocalRepository: ExpensesLocalRepository) {}
 
