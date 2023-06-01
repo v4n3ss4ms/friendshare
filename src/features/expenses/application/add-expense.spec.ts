@@ -17,7 +17,7 @@ const expenseData: Expense = {
 
 describe('AddExpense', () => {
   beforeEach( () => {
-    spyOn(expensesLocalRepository, 'addExpense').and.stub();
+    jest.spyOn(expensesLocalRepository, 'addExpense');
   });
   it('should add an expense', () => {
     addExpense.execute(expenseData);

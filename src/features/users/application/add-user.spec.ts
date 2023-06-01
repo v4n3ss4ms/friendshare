@@ -12,7 +12,7 @@ const userData: User = {
 
 describe('AddExpense', () => {
   beforeEach( () => {
-    spyOn(usersLocalRepository, 'addUser').and.stub();
+    jest.spyOn(usersLocalRepository, 'addUser');
   });
 
   it('should add an expense', () => {

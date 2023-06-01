@@ -7,7 +7,7 @@ const getUsers: GetUsers = new GetUsers(usersLocalRepository);
 
 describe('GetExpenses', () => {
   beforeEach( () => {
-    spyOn(usersLocalRepository, 'getAll').and.stub();
+    jest.spyOn(usersLocalRepository, 'getAll');
   });
 
   it('should return a list of users', () => {

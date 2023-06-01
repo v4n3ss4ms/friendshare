@@ -6,7 +6,7 @@ const getExpenses: GetExpenses = new GetExpenses(expensesLocalRepository);
 
 describe('GetExpenses', () => {
   beforeEach( () => {
-    spyOn(expensesLocalRepository, 'getAll').and.stub();
+    jest.spyOn(expensesLocalRepository, 'getAll');
   });
 
   it('should return a list of expenses', () => {
