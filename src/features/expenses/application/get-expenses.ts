@@ -1,15 +1,16 @@
-import { Injectable } from '@angular/core';
-import { Expense } from '../domain/expense';
-import { ExpensesLocalRepository } from '../infrastructure/expenses-local-repository';
+import {Inject, Injectable} from '@angular/core';
+import {Expense} from '../domain/expense';
+import {EXPENSES_REPOSITORY} from "../../../app/app.module";
+import {ExpensesRepository} from "../domain/expenses-repository";
+
 @Injectable({
   providedIn: 'root',
 })
 export class GetExpenses {
   expenses: Array<Expense> = [];
-  constructor(private expensesLocalRepository: ExpensesLocalRepository) {}
+  constructor(@Inject(EXPENSES_REPOSITORY) private expensesRepository: ExpensesRepository) {}
 
   async execute(): Promise<Expense[]> {
-    this.expenses = await this.expensesLocalRepository.getAll();
-    return this.expenses;
+    return await this.expensesRepository.getAll();
   }
 }

@@ -1,6 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { BalanceItemComponent } from './balance-item.component';
+import {BalanceItemComponent} from './balance-item.component';
+import {Currency} from "../../../core/domain/currency";
 
 describe('BalanceItemComponent', () => {
   let component: BalanceItemComponent;
@@ -11,9 +12,15 @@ describe('BalanceItemComponent', () => {
       declarations: [ BalanceItemComponent ]
     })
     .compileComponents();
-
     fixture = TestBed.createComponent(BalanceItemComponent);
     component = fixture.componentInstance;
+    component.userWithBalance = {
+      name: 'name',
+      balance: 99,
+      currency: Currency.euro,
+      id: 45,
+      totalExpenses: 89,
+    }
     fixture.detectChanges();
   });
 

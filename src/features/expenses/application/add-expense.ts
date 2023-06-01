@@ -1,13 +1,15 @@
-import { Injectable } from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
+import {EXPENSES_REPOSITORY} from "../../../app/app.module";
+import {ExpensesRepository} from "../domain/expenses-repository";
 import { Expense } from '../domain/expense';
-import { ExpensesLocalRepository } from '../infrastructure/expenses-local-repository';
+
 @Injectable({
   providedIn: 'root',
 })
 export class AddExpense {
-  constructor(private expensesLocalRepository: ExpensesLocalRepository) {}
+  constructor(@Inject(EXPENSES_REPOSITORY) private expensesRepository: ExpensesRepository) {}
 
   execute(expense: Expense): void {
-    this.expensesLocalRepository.addExpense(expense);
+    this.expensesRepository.addExpense(expense);
   }
 }

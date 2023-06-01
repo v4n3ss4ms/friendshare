@@ -7,6 +7,9 @@ import { BalancesListComponent } from '../../../balances/delivery/balances-list/
 import { BalanceItemComponent } from '../../../balances/delivery/balance-item/balance-item.component';
 import { NewExpensePopupComponent } from '../new-expense-popup/new-expense-popup.component';
 import { NewUserPopupComponent } from '../../../users/delivery/new-user-popup/new-user-popup.component';
+import {UsersLocalRepository} from "../../../users/infrastructure/users-local-repository";
+import {ExpensesLocalRepository} from "../../infrastructure/expenses-local-repository";
+import {EXPENSES_REPOSITORY, USERS_REPOSITORY} from "../../../../app/app.module";
 
 describe('ExpensesGroupComponent', () => {
   let component: ExpensesGroupComponent;
@@ -23,6 +26,14 @@ describe('ExpensesGroupComponent', () => {
         NewExpensePopupComponent,
         NewUserPopupComponent,
       ],
+      providers: [{
+        provide: USERS_REPOSITORY,
+        useClass: UsersLocalRepository,
+      },
+      {
+        provide: EXPENSES_REPOSITORY,
+        useClass: ExpensesLocalRepository,
+      }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ExpensesGroupComponent);

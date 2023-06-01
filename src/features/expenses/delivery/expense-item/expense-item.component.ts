@@ -10,7 +10,7 @@ import { GetUserName } from '../../../users/application/get-user-name';
 })
 export class ExpenseItemComponent implements OnInit {
   //@Input() expense: Partial<Expense> = {};
-  @Input() expense: Expense | any = {}; // !!
+  @Input() expense: Expense | any = {}; // !! CAMBIAR
   //@Input() expense = {} as Expense;
   @Input() users: User[] = [];
   date: string = '';

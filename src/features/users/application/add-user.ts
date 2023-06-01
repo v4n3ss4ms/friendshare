@@ -1,13 +1,15 @@
-import { Injectable } from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
+import {USERS_REPOSITORY} from "../../../app/app.module";
 import { User } from '../domain/user';
-import { UsersLocalRepository } from '../infrastructure/users-local-repository';
+import {UsersRepository} from "../domain/users-repository";
+
 @Injectable({
   providedIn: 'root',
 })
 export class AddUser {
-  constructor(private usersLocalRepository: UsersLocalRepository) {}
+  constructor(@Inject(USERS_REPOSITORY) private usersRepository: UsersRepository) {}
 
   execute(user: User): void {
-    this.usersLocalRepository.addUser(user);
+    this.usersRepository.addUser(user);
   }
 }

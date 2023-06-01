@@ -2,6 +2,9 @@ import { AddExpense } from './add-expense';
 import { Expense } from '../domain/expense';
 import { Currency } from '../../core/domain/currency';
 import { ExpensesLocalRepository } from '../infrastructure/expenses-local-repository';
+import {TestBed} from "@angular/core/testing";
+import {EXPENSES_REPOSITORY, USERS_REPOSITORY} from "../../../app/app.module";
+import {UsersLocalRepository} from "../../users/infrastructure/users-local-repository";
 
 const expensesLocalRepository = new ExpensesLocalRepository();
 const addExpense: AddExpense = new AddExpense(expensesLocalRepository);
@@ -16,7 +19,17 @@ const expenseData: Expense = {
   };
 
 describe('AddExpense', () => {
-  beforeEach( () => {
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      providers: [{
+        provide: USERS_REPOSITORY,
+        useClass: UsersLocalRepository,
+      },
+        {
+          provide: EXPENSES_REPOSITORY,
+          useClass: ExpensesLocalRepository,
+        }],
+    }).compileComponents();
     jest.spyOn(expensesLocalRepository, 'addExpense');
   });
   it('should add an expense', () => {

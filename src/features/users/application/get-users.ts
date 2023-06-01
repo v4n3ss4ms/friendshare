@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import { User } from '../domain/user';
-import { UsersLocalRepository } from '../infrastructure/users-local-repository';
+import {UsersRepository} from "../domain/users-repository";
+import {USERS_REPOSITORY} from "../../../app/app.module";
+
 @Injectable({
   providedIn: 'root',
 })
 export class GetUsers {
-  users: Array<User> = [];
-  constructor(private usersLocalRepository: UsersLocalRepository) {}
+  constructor(@Inject(USERS_REPOSITORY) private usersRepository: UsersRepository) {}
 
   async execute(): Promise<User[]> {
-    this.users = await this.usersLocalRepository.getAll();
-    return this.users;
+    return this.usersRepository.getAll();
   }
 }
