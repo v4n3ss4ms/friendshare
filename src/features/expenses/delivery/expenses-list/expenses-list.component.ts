@@ -21,6 +21,7 @@ export class ExpensesListComponent implements OnInit, DoCheck {
       this.expenses
     );
   }
+
   ngDoCheck() {
     this.orderedExpenses = this.getOrderedExpensesByRecent.execute(
       this.expenses
