@@ -1,8 +1,8 @@
-import { GetUsersWithBalance } from './get-users-with-balance';
-import { User } from '../domain/user';
-import { Expense } from '../../expenses/domain/expense';
-import { Currency } from '../../core/domain/currency';
-import { UserWithBalance } from '../domain/userWithBalance';
+import {GetUsersWithBalance} from './get-users-with-balance';
+import {User} from '../domain/user';
+import {Expense} from '../../expenses/domain/expense';
+import {Currency} from '../../core/domain/currency';
+import {UserWithBalance} from '../domain/userWithBalance';
 
 const getUsersWithBalance: GetUsersWithBalance = new GetUsersWithBalance();
 
@@ -62,32 +62,48 @@ const expensesDataMocked: Expense[] = [
 
 const expectedUsersWithBalance: UserWithBalance[] = [
   {
-    id: 1,
-    name: 'Paco',
-    totalExpenses: 140,
-    balance: 75.8,
-    currency: Currency.euro,
+    user: {
+      id: 1,
+      name: 'Paco',
+    },
+    balance: {
+      totalExpenses: 140,
+      balanceAmount: 75.8,
+      currency: Currency.euro,
+    }
   },
   {
-    id: 6,
-    name: 'María',
-    totalExpenses: 53.8,
-    balance: -10.4,
-    currency: Currency.euro,
+    user: {
+      id: 6,
+      name: 'María',
+    },
+    balance: {
+      totalExpenses: 53.8,
+      balanceAmount: -10.4,
+      currency: Currency.euro,
+    }
   },
   {
-    id: 11,
-    name: 'Manolo',
-    totalExpenses: 63,
-    balance: -1.2,
-    currency: Currency.euro,
+    user: {
+      id: 11,
+      name: 'Manolo',
+    },
+    balance: {
+      totalExpenses: 63,
+      balanceAmount: -1.2,
+      currency: Currency.euro,
+    }
   },
   {
-    id: 25,
-    name: 'Ana',
-    totalExpenses: 0,
-    balance: -64.2,
-    currency: Currency.euro,
+    user: {
+      id: 25,
+      name: 'Ana',
+    },
+    balance: {
+      totalExpenses: 0,
+      balanceAmount: -64.2,
+      currency: Currency.euro,
+    }
   },
 ];
 

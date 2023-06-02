@@ -9,17 +9,21 @@ describe('BalanceItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BalanceItemComponent ]
+      declarations: [BalanceItemComponent]
     })
-    .compileComponents();
+      .compileComponents();
     fixture = TestBed.createComponent(BalanceItemComponent);
     component = fixture.componentInstance;
     component.userWithBalance = {
-      name: 'name',
-      balance: 99,
-      currency: Currency.euro,
-      id: 45,
-      totalExpenses: 89,
+      user: {
+        id: 45,
+        name: 'name',
+      },
+      balance: {
+        balanceAmount: 99,
+        currency: Currency.euro,
+        totalExpenses: 89,
+      }
     }
     fixture.detectChanges();
   });

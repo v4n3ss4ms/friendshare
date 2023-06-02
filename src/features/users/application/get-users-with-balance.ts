@@ -19,14 +19,16 @@ export class GetUsersWithBalance {
     this.usersWithBalance = users.map((user) => {
       const totalUserExpenses = this.getTotalUserExpenses(expenses, user.id);
       return {
-        ...user,
-        totalExpenses: totalUserExpenses,
-        balance: this.getUserBalance(
-          this.totalGroupExpenses,
-          totalUserExpenses,
-          this.usersCount
-        ),
-        currency: Currency.euro, // Hardcoded - Please check ReadMe notes
+        user: user,
+        balance: {
+          totalExpenses: totalUserExpenses,
+          balanceAmount: this.getUserBalance(
+            this.totalGroupExpenses,
+            totalUserExpenses,
+            this.usersCount
+          ),
+          currency: Currency.euro, // Hardcoded - Please check ReadMe notes
+        },
       };
     });
     return this.usersWithBalance;
