@@ -1,14 +1,15 @@
 # Friend$hare
 
 ## Table of contents
-- [Development server](#development-server)
-- [Build](#build)
-- [Running unit tests](#running-unit-tests)
-- [Docker](#docker)
-  * [1 - Build the image](#1-build-the-image)
-  * [2 - Run the image](#2-run-the-image)
-  * [3 - Navigate](#3-navigate)
-- [Notes](#notes)
+
+-   [Development server](#development-server)
+-   [Build](#build)
+-   [Running unit tests](#running-unit-tests)
+-   [Docker](#docker)
+    -   [1 - Build the image](#1-build-the-image)
+    -   [2 - Run the image](#2-run-the-image)
+    -   [3 - Navigate](#3-navigate)
+-   [Notes](#notes)
 
 ## Development server
 
@@ -27,13 +28,17 @@ Run `npm run test` to execute the unit tests.
 ## Docker
 
 ### 1 - Build the image
-`docker build -t friendshare-image .` 
+
+`docker build -t friendshare-image .`
 
 ### 2 - Run the image
+
 `docker run --name friendshare-container -d -p 8080:80 friendshare-image`
 
 ### 3 - Navigate
-`http://localhost:8080/` 
+
+`http://localhost:8080/`
 
 ## Notes
-  * Currency should be set as group attribute 
+
+-   Currency should be set as group attribute
