@@ -1,9 +1,10 @@
 <li class="balances__item balance">
   <div class="balance__info">
-    <p class="balance__user">{{userWithBalance.user.name}}</p>
+    <p class="balance__user">{{ userWithBalance.user.name }}</p>
   </div>
   <div class="balance__amount">
-    <p
-      [ngClass]="userWithBalance.balance.balanceAmount < 0 ? 'balance__amount--negative' : ''">{{userWithBalance.balance.balanceAmount}}{{userWithBalance.balance.currency}}</p>
+    <p [class.balance__amount--negative]="!userWithBalance.balance.isPositive()">
+      {{ userWithBalance.balance.format() }}
+    </p>
   </div>
 </li>

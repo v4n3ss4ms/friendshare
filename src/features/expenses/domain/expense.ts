@@ -1,11 +1,11 @@
-import { Currency } from '../../core/domain/currency';
+import { MonetaryValue } from '../../../core/money/monetary-value';
+
 export type Milliseconds = number;
 
 export interface Expense {
   id: number;
   name: string;
-  amount: number;
-  currency: Currency
+  amount: MonetaryValue;
   date: Milliseconds;
   userId: number;
 }

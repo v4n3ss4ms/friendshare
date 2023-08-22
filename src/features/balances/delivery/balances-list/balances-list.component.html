@@ -2,6 +2,9 @@
   <h2 class="balances__title">Balance</h2>
 
   <ul class="balances__list">
-    <app-balance-item *ngFor="let userWithBalance of usersWithBalance; index as i;" [userWithBalance]="userWithBalance" />
+    <app-balance-item
+      *ngFor="let userWithBalance of usersWithBalance; index as i"
+      [userWithBalance]="userWithBalance"
+    />
   </ul>
 </section>

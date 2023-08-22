@@ -1,17 +1,28 @@
-<div class="pop-up">
+<div class="pop-up" data-testid="newUserPopup">
   <div class="pop-up__overlay"></div>
   <div class="pop-up__box">
     <h2 class="pop-up__title">Nuevo usuario</h2>
     <div class="pop-up__form">
-      <div class="pop-up__form-item">
-        <label class="pop-up__label" for="name">* Nombre: </label>
-        <input class="pop-up__input" id="name" type="text" [formControl]="name" required />
-      </div>
-      <p [ngClass]="!isValid ? 'pop-up__form--error' : ''">* Campo obligatorio</p>
-      <div class="pop-up__btn-wrapper">
-        <button class="pop-up__btn" type="button" (click)="onSaveUser()" [disabled]="!isValid">Añadir</button>
-        <button class="pop-up__btn" type="button" (click)="onCancel()">Cancelar</button>
-      </div>
+      <form [formGroup]="newUserForm" (ngSubmit)="onSaveUser()" novalidate>
+        <div class="pop-up__form-item">
+          <label class="pop-up__label" for="newUserName">* Nombre: </label>
+          <input
+            class="pop-up__input"
+            id="newUserName"
+            data-testid="newUserName"
+            type="text"
+            formControlName="name"
+            required
+          />
+        </div>
+        <p [class.pop-up__form--error]="!newUserForm.valid">* Campo obligatorio</p>
+        <div class="pop-up__btn-wrapper">
+          <button class="pop-up__btn" type="submit" data-testid="saveUserBtn" [disabled]="!newUserForm.valid">
+            Añadir
+          </button>
+          <button class="pop-up__btn" type="button" (click)="onCancel()">Cancelar</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

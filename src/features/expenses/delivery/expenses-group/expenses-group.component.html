@@ -1,25 +1,44 @@
 <main class="main">
   <section class="group-info">
-      <h2 class="group-info__name">Nombre del grupo</h2>
-      <ul class="group-info__actions">
-          <li class="group-info__action">
-              <button type="button" class="group-info__btn group-info__new-user" (click)="onOpenAddUser()">
-                <img src = "../../../../assets/imgs/user.svg" width="32" height="32" aria-hidden="true" focusable="false" alt="Nuevo usuario"/>
-                  <span class="visually-hidden">Nuevo usuario</span>
-              </button>
-          </li>
-          <li class="group-info__action">
-              <button type="button" class="group-info__btn group-info__new-expense" (click)="onOpenAddExpense()">
-                <img src = "../../../../assets/imgs/expense.svg" width="32" height="32" aria-hidden="true" focusable="false" alt="Nuevo gasto"/>
-                  <span class="visually-hidden">Nuevo gasto</span>
-              </button>
-          </li>
-      </ul>
+    <h2 class="group-info__name">Nombre del grupo</h2>
+    <ul class="group-info__actions">
+      <li class="group-info__action">
+        <button
+          type="button"
+          class="group-info__btn group-info__new-user"
+          data-testid="addUserBtn"
+          (click)="onOpenAddUser()"
+        >
+          <img src="../../../../assets/imgs/user.svg" width="32" height="32" aria-hidden="true" alt="Nuevo usuario" />
+          <span class="visually-hidden">Nuevo usuario</span>
+        </button>
+      </li>
+      <li class="group-info__action">
+        <button
+          type="button"
+          class="group-info__btn group-info__new-expense"
+          data-testid="addExpenseBtn"
+          (click)="onOpenAddExpense()"
+        >
+          <img src="../../../../assets/imgs/expense.svg" width="32" height="32" aria-hidden="true" alt="Nuevo gasto" />
+          <span class="visually-hidden">Nuevo gasto</span>
+        </button>
+      </li>
+    </ul>
   </section>
-<app-expenses-list [expenses]="expensesData" [users]="usersData"/>
-<app-balances-list [expenses]="expensesData" [users]="usersData"/>
+  <app-expenses-list [expenses]="expensesData" [users]="usersData" />
+  <app-balances-list [expenses]="expensesData" [users]="usersData" />
 </main>
 
-<app-new-expense-popup *ngIf="isOpenAddExpensePopup" [users]="usersData" (newExpenseEvent)="onAddExpense($event)" (closeNewExpenseEvent)="onCloseAddExpense()"/>
+<app-new-expense-popup
+  *ngIf="isOpenAddExpensePopup"
+  [users]="usersData"
+  (newExpenseEvent)="onAddExpense($event)"
+  (closeNewExpenseEvent)="onCloseAddExpense()"
+/>
 
-<app-new-user-popup *ngIf="isOpenAddUserPopup" (newUserEvent)="onAddUser($event)" (closeNewUserEvent)="onCloseAddUser()"/>
+<app-new-user-popup
+  *ngIf="isOpenAddUserPopup"
+  (newUserEvent)="onAddUser($event)"
+  (closeNewUserEvent)="onCloseAddUser()"
+/>

@@ -1,73 +1,73 @@
 :root {
-    --c-primary: #9fd3c7 ;
-    --c-secondary: #142d4c;
-    --c-positive: #3ca832;
-    --c-negative: #e3171a;
-    --c-error: #e3171a;
-    --c-grey-light: #d6d6d6;
-    --c-grey-med: #9d9d9d;
+  --c-primary: #9fd3c7;
+  --c-secondary: #142d4c;
+  --c-positive: #3ca832;
+  --c-negative: #e3171a;
+  --c-error: #e3171a;
+  --c-grey-light: #d6d6d6;
+  --c-grey-med: #9d9d9d;
 
-    --c-basic-bg: #ececec;
-    
-    --f-basic: 'Dosis', sans-serif;
-    --fw-primary: 300;
-    --fw-secondary: 500;
-    --fw-bold: 700;
+  --c-basic-bg: #ececec;
+
+  --f-basic: 'Dosis', sans-serif;
+  --fw-primary: 300;
+  --fw-secondary: 500;
+  --fw-bold: 700;
 }
 
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    background-color: var(--c-basic-bg);
-    font-family: var(--f-basic);
-    font-weight: var(--fw-primary);
+  background-color: var(--c-basic-bg);
+  font-family: var(--f-basic);
+  font-weight: var(--fw-primary);
 }
 
 app-root {
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
-h1  {
-    font-weight: var(--fw-bold);
+h1 {
+  font-weight: var(--fw-bold);
 }
 
 h2 {
-    font-weight: var(--fw-secondary);
+  font-weight: var(--fw-secondary);
 }
 
-header, footer{
-    color: var(--c-primary);
-    background-color: var(--c-secondary);
-    padding: 1rem;
-    text-align: center;
-    width: 100vw;
+header,
+footer {
+  color: var(--c-primary);
+  background-color: var(--c-secondary);
+  padding: 1rem;
+  text-align: center;
+  width: 100vw;
 }
 
 main {
-    margin: 0 auto;
-    width: 80vw;
+  margin: 0 auto;
+  width: 80vw;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 section {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .visually-hidden {
-    clip: rect(0 0 0 0); 
-    clip-path: inset(100%); 
-    height: 1px; 
-    overflow: hidden; 
-    position: absolute; 
-    white-space: nowrap; 
-    width: 1px; 
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
-

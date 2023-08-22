@@ -1,21 +1,25 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Expense } from '../../domain/expense';
 import { User } from '../../../users/domain/user';
-import { GetUserName } from '../../../users/application/get-user-name';
+import { GetUserNameQuery } from '../../../users/application/get-user-name.query';
 
 @Component({
+  standalone: true,
   selector: 'app-expense-item',
   templateUrl: './expense-item.component.html',
   styleUrls: ['./expense-item.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ExpenseItemComponent implements OnInit {
-  //@Input() expense: Partial<Expense> = {};
-  @Input() expense: Expense | any = {}; // !! CAMBIAR
-  //@Input() expense = {} as Expense;
+  @Input({
+    required: true,
+  })
+  expense!: Expense;
+
   @Input() users: User[] = [];
   date: string = '';
 
-  constructor(public getUserName: GetUserName) {}
+  constructor(public getUserName: GetUserNameQuery) {}
 
   ngOnInit(): void {
     const dateOptions: object = {
